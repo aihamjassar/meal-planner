@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Meal Planner
 
-## Getting Started
+> An in-progress Next.js meal-planning and food-management application with authentication support, Prisma-backed data access, dashboard routing, and category-management workflows.
 
-First, run the development server:
+## Overview
+
+This repository contains the source and supporting files for **Meal Planner**. The documentation below was prepared from the current repository structure and implementation files so that setup expectations, project boundaries, and implemented capabilities are explicit.
+
+## Technology
+
+| Area | Implementation |
+| --- | --- |
+| Framework | Next.js 15 and React 19 |
+| Data | Prisma ORM with PostgreSQL |
+| Authentication | NextAuth dependency and application providers |
+| State and forms | Zustand, React Hook Form, and Zod |
+
+## Key capabilities
+
+| Area | Current implementation |
+| --- | --- |
+| Dashboard foundation | Organizes application routes around an authenticated dashboard. |
+| Food-category management | Includes category cards and a category-form dialog. |
+| Typed data layer | Uses Prisma, service helpers, and schema types. |
+
+## Getting started
+
+Use the following workflow to work with the project locally.
 
 ```bash
+git clone https://github.com/aihamjassar/meal-planner.git
+cd meal-planner
+npm install
+# Set database and auth environment values
+npm run db:migrate
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Path | Purpose |
+| --- | --- |
+| prisma/ | Prisma schema and migration files |
+| src/app/(dashboard)/ | Dashboard and administration routes |
+| src/app/(dashboard)/admin/foods-management/categories/ | Category-management screen |
+| src/services/ | Query and mutation helpers |
+| src/store/ | Global and category state stores |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Configuration notes
 
-## Learn More
+Set the database and authentication configuration before running migrations. The currently visible implementation emphasizes administrative category management; document additional meal-planning flows as they are completed.
 
-To learn more about Next.js, take a look at the following resources:
+## License
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+No license file is currently included. Confirm the intended licensing terms with the repository owner before reuse or distribution.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Maintainer
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Maintained by [Aiham Jassar](https://github.com/aihamjassar). Contributions, issue reports, and improvement suggestions are welcome through the repository.
